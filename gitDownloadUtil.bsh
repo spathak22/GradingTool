@@ -1,0 +1,14 @@
+
+# all the students' submission folders in it
+# the makefile should also be in this folder
+
+i=studentsGitId.txt # file containing all onid id of students
+assignmentNo=3     # each line containing one
+username=spathak22
+password=gitpat22 # do not include @ in password
+
+for i in `cat $i`
+do
+	git clone http://$username:$password@github.com/OSU-CS261-W17/cs261-assignment-$assignmentNo-$i
+done
+~             

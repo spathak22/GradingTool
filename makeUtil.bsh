@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# this file should be put into the assignment folder with
+# all the students' submission folders in it
+# the makefile should also be in this folder
+
+i=studentsGitId.txt # file containing all onid id of students
+assignmentNo=3      # each line containing one
+user=pathaks
+for i in `cat $i`
+do
+    #cp makefile $i
+    cd cs261-assignment-$assignmentNo-$i
+    echo "***************************    Copying solution to student directory $i  ***************"
+    cp -rf /nfs/stak/students/p/$user/Grading/Assignment$assignmentNo/solution/* .
+    echo "##########################     Compiling now ###################### "         	   
+    make >> makeResult.log 
+    cd ..
+done
